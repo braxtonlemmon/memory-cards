@@ -67,3 +67,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+src/components/TestComponent.tsx
+src/components/SampleComponent.tsx
