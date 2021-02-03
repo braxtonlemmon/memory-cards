@@ -7,7 +7,6 @@ const Wrapper = styled.header`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border: 1px solid black;
 `;
 
 interface HeaderProps {
