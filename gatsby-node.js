@@ -11,16 +11,17 @@ exports.sourceNodes = async({
   actions: { createNode },
   createContentDigest,
 }) => {
-  const result = await fetch('https://picsum.photos/v2/list?page=4')
+  // const result = await fetch('https://picsum.photos/v2/list?page=4')
+  const result = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=sTTtJCI2EOET4PxZVBTlAsets7RX5T7b&limit=20')
   const resultData = await result.json();
-  resultData.forEach(image => {
+  resultData.data.forEach(image => {
     createNode({
-      imageUrl: image.download_url,
+      imageUrl: image.url,
       id: image.id,
       parent: null,
       children: [],
       internal: {
-        type: `picsum`,
+        type: `MyPicsumNodes`,
         contentDigest: createContentDigest(image)
       }
     })
